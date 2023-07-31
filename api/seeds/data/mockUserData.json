@@ -1,0 +1,222 @@
+[
+	{
+		"id": 1,
+		"username":"AvivaGuy",
+    "firstname": "Aviva",
+		"lastname": "Gierhard",
+		"email": "agierhard0@state.gov",
+		"password": "$2a$04$WkD5Db.M0IrfTqCeJhM5XOd4KvpTelf3SeIn/dDcJmmmEXaGN5NeG",
+		"role": "user",
+		"bio": null,
+		"link": null
+	},
+	{
+		"id": 2,
+		"username":"KCtheGoat",
+    "firstname": "Kacie",
+		"lastname": "Syrett",
+		"email": "ksyrett1@barnesandnoble.com",
+		"password": "$2a$04$UC.0Yu5H.9swX44TN5iqvOg5VnnPph6lMKVHGKUKVpRDn/wQvSTcC",
+		"role": "creator",
+		"bio": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+		"link": "https://8+.WuV/d**"
+	},
+	{
+		"id": 3,
+		"username":"Gabiiyyyy",
+    "firstname": "Gaby",
+		"lastname": "Bloss",
+		"email": "gbloss2@eepurl.com",
+		"password": "$2a$04$ZdHkca176H7GfqaJLWdzk.dVSpNTfBZ6Mmn.qNzoMkZ1TH7jIs9k2",
+		"role": "creator",
+		"bio": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+		"link": "http://4+.joFFwP/.**"
+	},
+	{
+		"id": 4,
+		"username":"MrMurr",
+    "firstname": "Murray",
+		"lastname": "Queripel",
+		"email": "mqueripel3@clickbank.net",
+		"password": "$2a$04$ClNvPE5m3gnz8NzrXVr5QO7zsLYrC526jG2XdY42qWATdk8j0K85W",
+		"role": "user",
+		"bio": null,
+		"link": null
+	},
+	{
+		"id": 5,
+		"username":"FenniferJay",
+    "firstname": "Gennifer",
+		"lastname": "Fay",
+		"email": "gfay4@theatlantic.com",
+		"password": "$2a$04$s38XX6LyeKfCAlF6p2C5DOSQ.TRwGlwObK9ETkeLKC/NedzcdaIgS",
+		"role": "user",
+		"bio": null,
+		"link": null
+	},
+	{
+		"id": 6,
+		"username":"LibasHap",
+    "firstname": "Libbie",
+		"lastname": "Feldhorn",
+		"email": "lfeldhorn5@sfgate.com",
+		"password": "$2a$04$Lbm0jTcetpwmFS8xpSCis./s2rqS/wPup2vhByTsJ6PqH6fdyBsE2",
+		"role": "user",
+		"bio": null,
+		"link": null
+	},
+	{
+		"id": 7,
+		"username":"Sabrina1011",
+    "firstname": "Sabrina",
+		"lastname": "Cundy",
+		"email": "scundy6@cnn.com",
+		"password": "$2a$04$qqvdaJgL/Pn1Gw2UX.TzpOUbuayf9GNfECoAbsPfIiJa6peyy/MbS",
+		"role": "user",
+		"bio": null,
+		"link": null
+	},
+	{
+		"id": 8,
+		"username":"NanniPate",
+    "firstname": "Pate",
+		"lastname": "Nanni",
+		"email": "pnanni7@salon.com",
+		"password": "$2a$04$IXcLBxT3jT1W66rdDN5O9.qqZsI/IIS5B4kw4Xk1wuON6QrAwA9.2",
+		"role": "admin",
+		"bio": null,
+		"link": null
+	},
+	{
+		"id": 9,
+		"username":"Pamijhgf",
+    "firstname": "Pammi",
+		"lastname": "Willatts",
+		"email": "pwillatts8@japanpost.jp",
+		"password": "$2a$04$NlNbpKwIBL0jifzpSKx15etuyQmsbYlsIipgbp.INjl9nZJBS9eLq",
+		"role": "user",
+		"bio": null,
+		"link": null
+	},
+	{
+		"id": 10,
+		"username":"Chaseyboy",
+    "firstname": "Chase",
+		"lastname": "Petworth",
+		"email": "cpetworth9@amazonaws.com",
+		"password": "$2a$04$pm13LsN5PcLX1x1sfrrAO.bN.IuMqBBZxzrQXGBHEu15fcUCzK4fq",
+		"role": "creator",
+		"bio": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+		"link": "http://e+.LlRAeg/-**"
+	},
+	{
+		"id": 11,
+		"username":"Ediiiieee",
+    "firstname": "Edie",
+		"lastname": "Martlew",
+		"email": "emartlewa@intel.com",
+		"password": "$2a$04$4wGtU4LCOMXfdEcWdbxA6uJ9nUFRQCJcFMUls4IZv8uPUJp.0mhzu",
+		"role": "user",
+		"bio": null,
+		"link": null
+	},
+	{
+		"id": 12,
+		"username":"MAtilda",
+    "firstname": "Maitilde",
+		"lastname": "Giraudoux",
+		"email": "mgiraudouxb@flickr.com",
+		"password": "$2a$04$r7otyTHuFjelspqZZNqIxOw3cIUPWUdVbfpELjCIyz5/iHokLuKZi",
+		"role": "creator",
+		"bio": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+		"link": "http://.+.CH/B**"
+	},
+	{
+		"id": 13,
+		"username":"ONGitsAldo",
+    "firstname": "Aldo",
+		"lastname": "Broomer",
+		"email": "abroomerc@youku.com",
+		"password": "$2a$04$NUzzRsz79q5VgOorpEcnP.wF0HrEakhIDUXBNyjwbmvgL/Yj2j.De",
+		"role": "creator",
+		"bio": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+		"link": "https://-+.WL/f**"
+	},
+	{
+		"id": 14,
+		"username":"Broderickman",
+    "firstname": "Lannie",
+		"lastname": "Broderick",
+		"email": "lbroderickd@dailymail.co.uk",
+		"password": "$2a$04$bhe5RXPFZt9imOSAaNAJSOAkDSshQdZbqDyQRPmfEdJ0NOfN25slS",
+		"role": "admin",
+		"bio": null,
+		"link": null
+	},
+	{
+		"id": 15,
+		"username":"FeelisBeartup",
+    "firstname": "Phillis",
+		"lastname": "Beartup",
+		"email": "pbeartupe@google.co.jp",
+		"password": "$2a$04$cEFS6CEnH5yhfa8J1HFCc.0irxR/46B8KEJ7jNBsB7HBmJHPd71ke",
+		"role": "creator",
+		"bio": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+		"link": "https://j+.Cde/9**"
+	},
+	{
+		"id": 16,
+		"username":"Jedi",
+    "firstname": "Jedidiah",
+		"lastname": "Vignaux",
+		"email": "jvignauxf@engadget.com",
+		"password": "$2a$04$3rcDDrcgUalmaiceKXjP8u8Mky9IkT0/ScIeACg8aiGt1aLj8MdRa",
+		"role": "user",
+		"bio": null,
+		"link": null
+	},
+	{
+		"id": 17,
+		"username":"Merell",
+    "firstname": "Merell",
+		"lastname": "Bagg",
+		"email": "mbaggg@apple.com",
+		"password": "$2a$04$MgnunM/gP8VIM.8lKVSIL.Y4MrHD/CtyYLsry7y5xWPjeyM/WNfpu",
+		"role": "creator",
+		"bio": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+		"link": "http://.+.EMQ/w**"
+	},
+	{
+		"id": 18,
+		"username":"Beryle",
+    "firstname": "Beryle",
+		"lastname": "Hobbert",
+		"email": "bhobberth@epa.gov",
+		"password": "$2a$04$rU4rZ57OdSSbvOfnZQmNEugR.oGwwZjSw7EXQeM4TRdTDZSva9X5W",
+		"role": "creator",
+		"bio": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+		"link": "https://i+.Se/.**"
+	},
+	{
+		"id": 19,
+		"username":"Rebecceme",
+    "firstname": "Rebecka",
+		"lastname": "Fonso",
+		"email": "rfonsoi@miibeian.gov.cn",
+		"password": "$2a$04$bRko3B/XMUfnGn2fnldHmeuMHNeq8MwGCUFj4udJ/vzK0SGynpVPC",
+		"role": "user",
+		"bio": null,
+		"link": null
+	},
+	{
+		"id": 20,
+		"username":"Tress5363",
+    "firstname": "Tressa",
+		"lastname": "Dallaway",
+		"email": "tdallawayj@stanford.edu",
+		"password": "$2a$04$.6NoZroUN2DFNuXuCslvTeo0O8F3kfoW5HyNFnU1oZyfA4At7mWFe",
+		"role": "admin",
+		"bio": null,
+		"link": null
+	}
+]
