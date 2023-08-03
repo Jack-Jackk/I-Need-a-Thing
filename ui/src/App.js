@@ -16,10 +16,10 @@ function App() {
           <Route path="/" element={<Layout/>}>
             <Route index element={<Home/>}/>
             <Route path="/login" element={<Login/>}/>
-            <Route path="/register" element={<Register/>}/>
+            <Route path="/users/register" element={<Register/>}/>
             <Route path="/posts/new" element={<CreatePost/>}/>
-            <Route path="/request/new" element={<CreateRequest/>}/>
-            <Route path="/service/new" element={<CreateService/>}/>
+            <Route path="/posts/new/request/" element={<CreateRequest/>}/>
+            <Route path="/posts/new/service" element={<CreateService/>}/>
           </Route>
         </Routes>
       </ThemeContextProvider>

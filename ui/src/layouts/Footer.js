@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { Box, Container, Grid, Typography } from '@mui/material';
-//still need to figure out how to get the footer to the bottom of the page
+
+
 function Footer() {
+
 	return (
 		<Box
 			sx={{
@@ -24,7 +26,7 @@ function Footer() {
 						<Typography color='textSecondary' variant='subtitle1'>
 							<Link
 								to='https://www.linkedin.com/in/jackson-abeyta-960243281/'
-								style={{ textDecoration: 'none' }}
+								style={{ color: "black" }}
 							>
 								Jackson Abeyta
 							</Link>

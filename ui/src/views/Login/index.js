@@ -63,6 +63,7 @@ function Login() {
             sx={{ mt: 3, mb: 3, width: "75%" }}
           >
             <Grid container spacing={2}>
+              {/* if inputs invalid, display this */}
               {loginError ? (
                 <>
                   <Grid item xs={12}>
@@ -100,7 +101,9 @@ function Login() {
                     </Typography>
                   </Grid>
                 </>
-              ) : (
+              ) : 
+              // if inputs valid display this
+              (
                 <>
                   <Grid item xs={12}>
                     <TextField

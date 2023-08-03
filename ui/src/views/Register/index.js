@@ -18,7 +18,14 @@ import { setToken } from "../../utility/utils";
 
 function Register() {
   const [userData, setUserdata] = useState({
-    role:'user'
+    username: "",
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    bio: "",
+    link: "",
+    role: ""
   });
 
   const navigate = useNavigate()
@@ -39,11 +46,11 @@ function Register() {
       navigate('/login')
       window.location.reload()
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
   };
   return (
-    <div>
+  <div>
       <Container component="main" maxWidth="xs" sx={{padding: '5%'}}>
         <CssBaseline />
         <Box
@@ -145,6 +152,7 @@ function Register() {
                   </RadioGroup>
                 </FormControl>
               </Grid>
+              {/* if user chooses become a creator display these inputs aswell */}
               {userData.role === "creator" ? (
                 <>
                   <Grid item xs={12}>

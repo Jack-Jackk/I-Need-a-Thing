@@ -8,4 +8,9 @@ exports.findAllPosts = async () => {
     return posts
   }
 
+  exports.addNewPost = async (newPost) => {
+    const createdPost = await knex('posts').insert(newPost)
+    return createdPost
+  }
+
   
