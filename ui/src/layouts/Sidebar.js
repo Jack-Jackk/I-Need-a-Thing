@@ -13,8 +13,10 @@ import FeedIcon from '@mui/icons-material/Feed';
 import ForumIcon from '@mui/icons-material/Forum';
 import CommentIcon from '@mui/icons-material/Comment';
 
+// sidebar with link buttons
 
 const Sidebar = () => {
+
 	return (
 		<Box sx={{ width: '100%', maxWidth: 250, bgcolor: 'background.red' }}>
 			<List>

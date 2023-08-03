@@ -8,12 +8,12 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-
 import { useNavigate } from "react-router-dom";
-import { post } from "../../utility/api";
+import { postRequest } from "../../utility/api";
 import { setToken } from "../../utility/utils";
 import MenuItem from '@mui/material/MenuItem';
 
+// options for dropdown selects
 const options = [
     {
         value: "true",
@@ -41,7 +41,7 @@ function CreateRequest() {
     console.log(postData);
 
     try {
-      const response = await post(postData);
+      const response = await postRequest(postData);
       //submit users token to jwt utility
       setToken(response.token);
       //redirect user to success page
@@ -115,9 +115,26 @@ function CreateRequest() {
                   fullWidth
                   name="designUrl"
                   label="Design URL"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
+                  id="designUrl"
+                  onChange={(e) => handleChange(e)}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  name="quantity"
+                  label="Quantity"
+                  id="quantity"
+                  onChange={(e) => handleChange(e)}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="country"
+                  label="Country"
+                  id="country"
                   onChange={(e) => handleChange(e)}
                 />
               </Grid>

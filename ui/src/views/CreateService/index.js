@@ -8,11 +8,14 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+
 import { useNavigate } from "react-router-dom";
-import { post } from "../../utility/api";
+import { postService } from "../../utility/api";
 import { setToken } from "../../utility/utils";
 import MenuItem from '@mui/material/MenuItem';
 
+
+// menu options for dropdown selects
 const options = [
     {
         value: "true",
@@ -40,7 +43,7 @@ function CreateRequest() {
     console.log(postData);
 
     try {
-      const response = await post(postData);
+      const response = await postService(postData);
       //submit users token to jwt utility
       setToken(response.token);
       //redirect user to success page
@@ -63,7 +66,7 @@ function CreateRequest() {
           }}
         >
           <Typography component="h1" variant="h5">
-            Post a Request
+            Create a Request
           </Typography>
           <Box
             component="form"
@@ -96,9 +99,9 @@ function CreateRequest() {
               <Grid item xs={12}>
               <TextField
                     fullWidth
-                    id="isDesignRequired"
+                    id="canDesign"
                     select
-                    label="Is a design required?"
+                    label="Can you design items?"
                     defaultValue=""
                     onChange={(e) => handleChange(e)}
                     >
@@ -112,23 +115,51 @@ function CreateRequest() {
                 <Grid item xs={12}>
                 <TextField
                   fullWidth
-                  name="designurl"
-                  label="Design URL"
-                  id="designUrl"
+                  name="maxHeight"
+                  label="Max Height"
+                  id="maxHeight"
                   onChange={(e) => handleChange(e)}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   fullWidth
-                  name="quantity"
-                  label="Quantity"
-                  id="quantity"
+                  name="maxHeight"
+                  label="Max Height"
+                  id="maxHeight"
                   onChange={(e) => handleChange(e)}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  fullWidth
+                  name="maxWidth"
+                  label="Max Width"
+                  id="maxWidth"
+                  onChange={(e) => handleChange(e)}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  name="maxDepth"
+                  label="Max Depth"
+                  id="maxDepth"
+                  onChange={(e) => handleChange(e)}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  name="maxPrecision"
+                  label="Max Precision"
+                  id="maxPrecision"
+                  onChange={(e) => handleChange(e)}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
                   fullWidth
                   name="country"
                   label="Country"

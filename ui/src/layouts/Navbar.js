@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import { useState } from "react";
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import { isUserLoggedIn } from "../utility/utils";
 import { Link } from "react-router-dom";
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
@@ -18,10 +18,10 @@ import Divider from '@mui/material/Divider';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Button } from "@mui/material";
 
 
 
@@ -46,11 +46,12 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 	justifyContent: 'flex-start',
   }));
 
+//   list of items in the account drawer menu
   const settingsItemsList = [
 	{
 	  text: "Profile",
 	  icon: <MenuIcon/>,
-	  to: "/users/profile" // <-- add link targets
+	  to: "/users/profile/" 
 	},
 	{
 	  text: "Account Settings",
@@ -79,11 +80,15 @@ const Navbar = (props) => {
 	//** Return JSX
 	return (
 		<Box sx={{ display: 'flex' }}>
+
 		<AppBar position="sticky" open={open}>
         <Toolbar>
           <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
 			I Need a Thing
           </Typography>
+
+		  {/* if user is logged in display side drawer with account options */}
+		  {isUserLoggedIn() ? (
           <IconButton
             color="white"
             aria-label="open drawer"
@@ -92,9 +97,24 @@ const Navbar = (props) => {
             sx={{ ...(open && { display: 'none' }) }}
           >
             
-          </IconButton>
+          </IconButton> ) : 
+		//   if user is not logged indisplay login button
+		  (
+			<Link to="/login">
+			<Button
+				sx={{
+					// display: { xs: 'none', md: 'flex' },
+					mr: 1,
+					textDecoration: "none",
+					color: "white",
+					flex: "row-reverse",
+				}}>
+				Login
+			</Button>
+		</Link>
+		  )}
 		  <MenuIcon/>
-        </Toolbar>
+		  </Toolbar>
       </AppBar>
 	  <Drawer
 		sx={{

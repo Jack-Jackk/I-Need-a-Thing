@@ -1,6 +1,6 @@
 const { Router } = require('express')
 
-const {showAll, register, login, showMe, showById, showAllNonprofits} = require('./controller')
+const {showAll, register, login, showMe } = require('./controller')
 
 
 //import middleware
@@ -11,10 +11,8 @@ const router = new Router()
 
 // define routes
 
-router.get('/', authenticate, showAll)
-router.get('/posts', showAllPosts)
+router.get('/', showAll)
 router.get('/me', authenticate, showMe)
-router.get('/id/:id', showById)
 router.post('/register', register)
 router.post('/login', login)
 

@@ -1,5 +1,7 @@
 import { Box, Typography } from "@mui/material";
 
+// right bar to take up space
+
 const Rightbar = () => {
 
     return (

@@ -6,6 +6,7 @@ import Sidebar from './Sidebar';
 import Rightbar from './Rightbar';
 
 const Layout = (props) => {
+	
 	return (
 		<Box>
 			<Navbar />

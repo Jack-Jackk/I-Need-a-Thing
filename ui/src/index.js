@@ -6,8 +6,8 @@ import App from './App'
 
 const prepare = () => {
   if (process.env.NODE_ENV === 'development') {  // prevents the mock server from working in a deployed, production env
-    const { worker } = require('./mocks/browser.js')
-    return worker.start({ onUnhandledRequest: "bypass" }) // start option removes warnings from msw
+    // const { worker } = require('./mocks/browser.js')
+    // return worker.start({ onUnhandledRequest: "bypass" }) // start option removes warnings from msw
   }
   return Promise.resolve()
 }
