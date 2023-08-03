@@ -81,23 +81,23 @@ const Navbar = (props) => {
 	return (
 		<Box sx={{ display: 'flex' }}>
 
-		<AppBar position="sticky" open={open}>
+		<AppBar position="sticky" style={{ background: '#E3FEE6' }} open={open}>
         <Toolbar>
-          <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
+          <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} color="black" component="div">
 			I Need a Thing
           </Typography>
 
 		  {/* if user is logged in display side drawer with account options */}
-		  {isUserLoggedIn() ? (
+		  {/* {isUserLoggedIn() ? ( */}
           <IconButton
-            color="white"
+            color= "inherit"
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerOpen}
             sx={{ ...(open && { display: 'none' }) }}
-          >
-            
-          </IconButton> ) : 
+          />
+           
+          {/* </IconButton> ) : 
 		//   if user is not logged indisplay login button
 		  (
 			<Link to="/login">
@@ -106,13 +106,13 @@ const Navbar = (props) => {
 					// display: { xs: 'none', md: 'flex' },
 					mr: 1,
 					textDecoration: "none",
-					color: "white",
+					color: "black",
 					flex: "row-reverse",
 				}}>
 				Login
 			</Button>
 		</Link>
-		  )}
+		  )} */}
 		  <MenuIcon/>
 		  </Toolbar>
       </AppBar>
@@ -138,7 +138,7 @@ const Navbar = (props) => {
     return (
       <ListItem component={Link} to={item.to} key={text}>
         {icon && <ListItemIcon>{icon}</ListItemIcon>}
-        <ListItemText primary={text} style={{ color: "black" }} />
+        <ListItemText primary={text} style={{ color: "white" }} />
       </ListItem>
     );
   })}

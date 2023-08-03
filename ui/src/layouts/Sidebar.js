@@ -18,9 +18,9 @@ import CommentIcon from '@mui/icons-material/Comment';
 const Sidebar = () => {
 
 	return (
-		<Box sx={{ width: '100%', maxWidth: 250, bgcolor: 'background.red' }}>
+		<Box sx={{ width: '100%', maxWidth: 250 }}>
 			<List>
-				<Link to='/' style={{ color: 'black',textDecoration: 'none' }}>
+				<Link to='/' style={{ color: 'white',textDecoration: 'none' }}>
 			  <ListItem disablePadding>
 				<ListItemButton>
 				  <ListItemIcon>
@@ -33,7 +33,7 @@ const Sidebar = () => {
 
 			  <Divider />
 
-				<Link to='/posts/new/' style={{ color: 'black',textDecoration: 'none' }}>
+				<Link to='/posts/new/' style={{ color: 'white',textDecoration: 'none' }}>
 			  <ListItem disablePadding>
 				<ListItemButton>
 				  <ListItemIcon>
@@ -46,7 +46,7 @@ const Sidebar = () => {
 
 		  <Divider />
 
-			<Link to='/posts/requests/' style={{ color: 'black',textDecoration: 'none' }}>
+			<Link to='/posts/requests/' style={{ color: 'white',textDecoration: 'none' }}>
 			  <ListItem disablePadding>
 				<ListItemButton>
 					<ListItemIcon>
@@ -57,7 +57,7 @@ const Sidebar = () => {
 			  </ListItem>
 			  </Link>
 
-			  <Link to='/posts/services/' style={{ color: 'black',textDecoration: 'none' }}>
+			  <Link to='/posts/services/' style={{ color: 'white',textDecoration: 'none' }}>
 			  <ListItem disablePadding>
 				<ListItemButton >
 					<ListItemIcon>
@@ -68,7 +68,7 @@ const Sidebar = () => {
 			  </ListItem>
 			  </Link>
 
-			  <Link to='/users/posts/me' style={{ color: 'black',textDecoration: 'none' }}>
+			  <Link to='/users/posts/me' style={{ color: 'white',textDecoration: 'none' }}>
 			  <ListItem disablePadding>
 				<ListItemButton>
 					<ListItemIcon>
@@ -79,7 +79,7 @@ const Sidebar = () => {
 			  </ListItem>
 			  </Link>
 
-			<Link to='/users/comments/me' style={{ color: 'black', textDecoration: 'none' }}>
+			<Link to='/users/comments/me' style={{ color: 'white', textDecoration: 'none' }}>
 			  <ListItem disablePadding>
 				<ListItemButton>
 					<ListItemIcon>
