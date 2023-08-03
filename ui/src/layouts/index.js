@@ -1,20 +1,22 @@
-import { Paper, Stack } from '@mui/material';
+import { Box,  Stack } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
+import Rightbar from './Rightbar';
 
 const Layout = (props) => {
 	return (
-		<Paper>
+		<Box>
 			<Navbar />
+			<Stack  direction="row" justifyContent="space-between"  spacing={2} >
 			<Sidebar />
-			<Stack display="flex" direction="row" justifyContent="center" alignItems="center" spacing={2} >
 			<Outlet />
+			<Rightbar/>
 			</Stack>
 			<Footer />
 			
-		</Paper>
+		</Box>
 	);
 };
 

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import { Box, Container, Grid, Typography } from '@mui/material';
 //still need to figure out how to get the footer to the bottom of the page
-function Footer(props) {
+function Footer() {
 	return (
 		<Box
 			sx={{

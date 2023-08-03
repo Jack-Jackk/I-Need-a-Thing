@@ -2,11 +2,12 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> } 
  */
-const mockUserData = require('./data/mockUserData.json')
+const creators = require('./data/creators.json')
+const regularUser = require('./data/users.json')
 exports.seed = async function(knex) {
   // Deletes ALL existing entries
   await knex('users').del()
-  await knex('users').insert(mockUserData);
-  // Correct the incrementing id to prevent conflict
-  // await knex.raw(`ALTER SEQUENCE reports_id_seq RESTART WITH ${mockUserData.length + 1}`)
+  await knex('users').insert(regularUser);
+  await knex('users').insert(creators);
+  await knex.raw(`ALTER SEQUENCE users_id_seq RESTART WITH 41`)
 };

@@ -8,10 +8,9 @@ exports.up = function(knex) {
         table.integer('userId').notNullable().references('id').inTable('users').onDelete('CASCADE');
         table.string('title', 80).notNullable();
         table.text('description').notNullable();
-        table.enu("role", ["request", "service"]).notNullable();
         table.boolean('canDesign').nullable();
         table.boolean('isDesignRequired').nullable();
-        table.string('designUrl', 255).nullable();
+        table.text('designUrl').nullable();
         table.datetime('timeframe').nullable();
         table.integer("quantity").nullable();
         table.string('country', 75).notNullable();
@@ -20,6 +19,7 @@ exports.up = function(knex) {
         table.integer("maxDepth").nullable();
         table.integer("maxPrecision").nullable();
         table.datetime('createdAt').notNullable();
+        table.enu("type", ["request", "service"]).notNullable();
       })
 };
 
