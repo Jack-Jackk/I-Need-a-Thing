@@ -11,7 +11,6 @@ exports.up = function(knex) {
         table.boolean('canDesign').nullable();
         table.boolean('isDesignRequired').nullable();
         table.text('designUrl').nullable();
-        table.datetime('timeframe').nullable();
         table.integer("quantity").nullable();
         table.string('country', 75).notNullable();
         table.integer("maxHeight").nullable();
