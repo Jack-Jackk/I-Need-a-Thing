@@ -9,7 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Link } from 'react-router-dom';
-import { Button, Divider } from '@mui/material';
+import { Button, Divider, Grid } from '@mui/material';
 import CommentIcon from '@mui/icons-material/Comment';
 import { getAllPosts } from '../../utility/api';
 import { useState, useEffect } from 'react';
@@ -24,8 +24,6 @@ const ExpandMore = styled((props) => {
     duration: theme.transitions.duration.shortest,
   }),
 }));
-
-
 
 
 const Home = (props) => {
@@ -48,8 +46,11 @@ const Home = (props) => {
 if (!posts) {
   return <div>Loading...</div>
 }
-{posts.map((post) => {
+
   return (
+    
+    <Grid>
+      {posts.map((post) => (
     <Card sx={{ maxWidth: 600 }}>
       <Link to='/posts/:id'>
         <Button sx={{ color:"black", textDecoration: "none"}}>
@@ -99,9 +100,9 @@ if (!posts) {
         </CardContent>
       </Collapse>
     </Card> 
-   
+      ))}
+    </Grid>
   );
-})}
 }
 
 export default Home;

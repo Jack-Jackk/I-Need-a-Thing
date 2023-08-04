@@ -88,22 +88,21 @@ const Navbar = (props) => {
           </Typography>
 
 		  {/* if user is logged in display side drawer with account options */}
-		  {/* {isUserLoggedIn() ? ( */}
+		   {isUserLoggedIn() ? ( 
           <IconButton
             color= "inherit"
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerOpen}
             sx={{ ...(open && { display: 'none' }) }}
-          />
-           
-          {/* </IconButton> ) : 
-		//   if user is not logged indisplay login button
-		  (
+          /> 
+		  ) 
+		  : 
+		  ( 
 			<Link to="/login">
 			<Button
 				sx={{
-					// display: { xs: 'none', md: 'flex' },
+					display: { xs: 'none', md: 'flex' },
 					mr: 1,
 					textDecoration: "none",
 					color: "black",
@@ -112,7 +111,7 @@ const Navbar = (props) => {
 				Login
 			</Button>
 		</Link>
-		  )} */}
+		  )} 
 		  <MenuIcon/>
 		  </Toolbar>
       </AppBar>

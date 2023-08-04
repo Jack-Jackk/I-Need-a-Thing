@@ -17,7 +17,7 @@ exports.up = function(knex) {
         table.integer("maxWidth").nullable();
         table.integer("maxDepth").nullable();
         table.integer("maxPrecision").nullable();
-        table.datetime('createdAt').notNullable();
+        table.datetime('createdAt').nullable();
         table.enu("type", ["request", "service"]).notNullable();
       })
 };

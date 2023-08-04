@@ -11,7 +11,7 @@ const router = new Router()
 
 // define routes
 
-router.get('/', showAll)
+router.get('/', authenticate, showAll)
 router.get('/me', authenticate, showMe)
 router.post('/register', register)
 router.post('/login', login)

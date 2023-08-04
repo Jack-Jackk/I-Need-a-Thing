@@ -49,8 +49,9 @@ function Register() {
       console.log(error)
     }
   };
+
   return (
-  <div>
+  <>
       <Container component="main" maxWidth="xs" sx={{padding: '5%'}}>
         <CssBaseline />
         <Box
@@ -196,7 +197,7 @@ function Register() {
           </Box>
         </Box>
       </Container>
-    </div>
+    </>
   );
 }
 export default Register;

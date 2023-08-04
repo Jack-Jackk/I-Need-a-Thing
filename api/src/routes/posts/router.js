@@ -8,7 +8,7 @@ const router = new Router()
 
 // define routes
 router.get('/', showAllPosts)
-router.post('/posts', createNewPost)
+router.post('/new/request', createNewPost)
 
 // exporting router
 module.exports = router

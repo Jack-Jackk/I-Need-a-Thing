@@ -29,6 +29,15 @@ const options = [
 
 function CreateRequest() {
   const [postData, setPostdata] = useState({
+    title: "",
+    description: "",
+    canDesign: "",
+    country: "",
+    maxHeight: "",
+    maxWidth: "",
+    maxDepth: "",
+    maxPrecision: "",
+    type: "service"
   });
 
   const navigate = useNavigate()
@@ -115,9 +124,9 @@ function CreateRequest() {
                 <Grid item xs={12}>
                 <TextField
                   fullWidth
-                  name="maxHeight"
-                  label="Max Height"
-                  id="maxHeight"
+                  name="country"
+                  label="Country"
+                  id="country"
                   onChange={(e) => handleChange(e)}
                 />
               </Grid>
@@ -154,16 +163,6 @@ function CreateRequest() {
                   name="maxPrecision"
                   label="Max Precision"
                   id="maxPrecision"
-                  onChange={(e) => handleChange(e)}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="country"
-                  label="Country"
-                  id="country"
                   onChange={(e) => handleChange(e)}
                 />
               </Grid>

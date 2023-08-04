@@ -27,6 +27,13 @@ const options = [
 
 function CreateRequest() {
   const [postData, setPostdata] = useState({
+    title: "",
+    description: "",
+    isDesignRequired: "",
+    designUrl: "",
+    quantity: "",
+    country: "",
+    type: "request"
   });
 
   const navigate = useNavigate()
