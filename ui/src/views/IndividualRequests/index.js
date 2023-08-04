@@ -6,7 +6,7 @@ import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { Button, Divider, Grid } from '@mui/material';
+import { Divider, Grid } from '@mui/material';
 import CommentIcon from '@mui/icons-material/Comment';
 import { getRequestById } from '../../utility/api';
 import { useState, useEffect } from 'react';
@@ -46,32 +46,33 @@ const IndividualRequests = (props) => {
     
     <Grid>
     <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 950, maxWidth: 950, maxHeight:950 }}>
-        <Button sx={{ color:"black", textDecoration: "none"}}>
-        <Typography variant="h4" color="black">
-          Title
-        </Typography>
-      </Button>
       <CardContent>
-        <Typography variant="body2" color="black">
-          Description
+      <Typography padding="1%" mt={2} variant="h4" color="black">
+          I need a metal bracket for my racecar
         </Typography>
-        <Typography variant="body2" color="black">
-          Country
+        <Typography mt={2} mb={2} variant="h6" color="black">
+        With the metal bracket tailored to fit my car's specific requirements, I can confidently embrace the road ahead, knowing my vehicle is equipped for enhanced performance and functionality.
         </Typography>
-        <Typography variant="body2" color="black">
-           Is Design Required?
+        <Typography m={2}  mt={2}variant="h7" color="black">
+           Is Design Required? No
           </Typography>
-          <Typography variant="body2" color="black">
-          Design URL
+        <Typography m={2} mt={2} variant="h7" color="black">
+          Fabrication Type: CNC 
         </Typography>
-        <Typography variant="body2" color="black">
-          Fabrication Type & Material
+        <Typography m={2} mt={2} variant="h7" color="black">
+          Material: Aluminum
         </Typography>
-        <Typography variant="body2" color="black">
-          Quantity
+        <Typography m={2} mt={2} variant="body1" color="black">
+          Design URL: architectural_example-imperial.dwg
         </Typography>
-        <Typography variant="body2" color="black">
-          posted at
+        <Typography m={2} variant="body1" color="black">
+          Quantity: 2
+        </Typography>
+        <Typography m={2} variant="body1" color="black">
+          Country: United States
+        </Typography>
+        <Typography m={2} variant="body2" color="black">
+          posted at: 08/12/23 9:54 PM
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -87,8 +88,8 @@ const IndividualRequests = (props) => {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-        <Typography>Comments</Typography>
-          <Typography paragraph>@RandomUserGuy: The comments will go here!</Typography>
+        <Typography variant="h6" color="black" padding="1%">Comments</Typography>
+          <Typography color="black" paragraph>@RandomUserGuy: The comments will go here!</Typography>
           <Divider/>
         </CardContent>
       </Collapse>

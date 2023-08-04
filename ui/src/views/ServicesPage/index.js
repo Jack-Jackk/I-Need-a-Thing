@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-import { Button, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import { getAllServices } from '../../utility/api';
 import { useState, useEffect } from 'react';
 
@@ -21,29 +21,24 @@ const ServicesPage = (props) => {
   }, [services]);
 
     
-    return (
+  return (
     
-      <Grid>
-       {/* {requests.map((request) => (   */}
-      <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 600, maxWidth: 600, maxHeight:200 }}>
-      <Link to='/posts/id/:id'>
-          <Button sx={{ color:"black", textDecoration: "none"}}>
-          <Typography variant="h4" color="black">
-            Title
-          </Typography>
-        </Button>
-        </Link>
-        <CardContent>
-          <Typography variant="body2" color="black">
-            Description
-          </Typography>
-          <Typography variant="body2" color="black">
-            Country
-            </Typography>
-        </CardContent>
-      </Card> 
-     {/* })} */}
-      </Grid>
-    );
+    <Grid>
+  <Link to="/posts/services/id/" sx={{ textDecoration:"none" }}>
+     {/* {requests.map((request) => (   */}
+  <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 600, maxWidth: 600, maxHeight:200 }}>
+    <CardContent>
+        <Typography padding="1%" mt={2} variant="h5" color="black">
+        I create wooden trinkets
+        </Typography>
+        <Typography variant="body2" color="black">
+        As a skilled craftsman using CNC technology, I meticulously carve exquisite wooden trinkets with precision and artistry. The CNC machine allows me to create intricate designs and shapes, ensuring each piece is a unique work of art. From personalized keychains to ornate figurines, my CNC-crafted wooden trinkets captivate the imagination and add a touch of nature's beauty to everyday life.
+        </Typography>
+      </CardContent>
+    </Card> 
+    {/* })} */}
+    </Link>
+  </Grid>
+  );
 }
 export default ServicesPage;

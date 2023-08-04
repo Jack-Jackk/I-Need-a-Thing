@@ -6,7 +6,7 @@ import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { Button, Divider, Grid } from '@mui/material';
+import { Divider, Grid } from '@mui/material';
 import CommentIcon from '@mui/icons-material/Comment';
 import { getServiceById } from '../../utility/api';
 import { useState, useEffect } from 'react';
@@ -47,32 +47,39 @@ const IndividualServices = (props) => {
     
     <Grid>
     <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 950, maxWidth: 950, maxHeight:950 }}>
-        <Button sx={{ color:"black", textDecoration: "none"}}>
-        <Typography variant="h4" color="black">
-          Title
-        </Typography>
-      </Button>
       <CardContent>
-        <Typography variant="body2" color="black">
-          Description
+      <Typography padding="1%" mt={2} variant="h4" color="black">
+          I create wooden trinkets
         </Typography>
-        <Typography variant="body2" color="black">
-          Country
+        <Typography mt={2} mb={4} variant="h6" color="black">
+        As a skilled craftsman using CNC technology, I meticulously carve exquisite wooden trinkets with precision and artistry. The CNC machine allows me to create intricate designs and shapes, ensuring each piece is a unique work of art. From personalized keychains to ornate figurines, my CNC-crafted wooden trinkets captivate the imagination and add a touch of nature's beauty to everyday life.
         </Typography>
-        <Typography variant="body2" color="black">
-           Is Design Required?
+        <Typography m={2}  mt={2}variant="h7" color="black">
+           Can Design? Yes
           </Typography>
-          <Typography variant="body2" color="black">
-          Design URL
+        <Typography m={2} mt={2} variant="h7" color="black">
+          Fabrication Type: CNC 
         </Typography>
-        <Typography variant="body2" color="black">
-          Fabrication Type & Material
+        <Typography m={2} mt={2} variant="h7" color="black">
+          Material: Wood
         </Typography>
-        <Typography variant="body2" color="black">
-          Quantity
+        <Typography m={2} mt={2} variant="body1" color="black">
+        Max Height: 48 in
         </Typography>
-        <Typography variant="body2" color="black">
-          posted at
+        <Typography m={2} mt={2} variant="body1" color="black">
+        Max Width: 48 in
+        </Typography>
+        <Typography m={2} mt={2} variant="body1" color="black">
+        Max Depth: 48 in
+        </Typography>
+        <Typography m={2} mt={2} variant="body1" color="black">
+        Max Precision: 48 in
+        </Typography>
+        <Typography m={2} variant="body1" color="black">
+          Country: United States
+        </Typography>
+        <Typography m={2} variant="body2" color="black">
+          posted at: 08/12/23 9:54 PM
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -88,8 +95,8 @@ const IndividualServices = (props) => {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-        <Typography>Comments</Typography>
-          <Typography paragraph>@RandomUserGuy: The comments will go here!</Typography>
+        <Typography variant="h6" color="black" padding="1%">Comments</Typography>
+          <Typography color="black" paragraph>@RandomUserGuy: The comments will go here!</Typography>
           <Divider/>
         </CardContent>
       </Collapse>

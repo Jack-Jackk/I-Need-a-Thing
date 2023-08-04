@@ -176,7 +176,7 @@ export const getMe = async() => {
 	const response = await fetch(`${baseUrl}/users/me/`, {
 	  method: "GET",
 	  headers: new Headers({
-		"Authorization": `Bearer ${token}` //Token is required for protected Routes
+		"Authorization": `Bearer ` //Token is required for protected Routes
 	  }),
 	})
 
@@ -190,14 +190,11 @@ export const getMe = async() => {
 }
 
 export const getServiceById = async (id) => {
-	const token = getToken();
-	if (!token) {
-	  throw new Error(`Missing User Token`);
-	}
+	
 	const response = await fetch(`${baseUrl}/posts/id/${id}`, {
 	  method: "GET",
 	  headers: new Headers({
-		Authorization: `Bearer ${token}`, //Token is required for protected Routes
+		Authorization: `Bearer `, //Token is required for protected Routes
 	  }),
 	});
 	const responseData = await response.json();
@@ -210,14 +207,11 @@ export const getServiceById = async (id) => {
   };
 
   export const getRequestById = async (id) => {
-	const token = getToken();
-	if (!token) {
-	  throw new Error(`Missing User Token`);
-	}
+	
 	const response = await fetch(`${baseUrl}/posts/id/${id}`, {
 	  method: "GET",
 	  headers: new Headers({
-		Authorization: `Bearer ${token}`, //Token is required for protected Routes
+		Authorization: `Bearer `, //Token is required for protected Routes
 	  }),
 	});
 	const responseData = await response.json();

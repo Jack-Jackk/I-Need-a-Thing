@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-import { Button, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import { getAllRequests } from '../../utility/api';
 import { useState, useEffect } from 'react';
 
@@ -24,26 +24,21 @@ const RequestsPage = (props) => {
   return (
     
     <Grid>
+  <Link to="/posts/requests/id/" sx={{ textDecoration:"none" }}>
      {/* {requests.map((request) => (   */}
-    <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 600, maxWidth: 600, maxHeight:200 }}>
-    <Link to='/posts/id/:id'>
-        <Button sx={{ color:"black", textDecoration: "none"}}>
-        <Typography variant="h4" color="black">
-          Title
-        </Typography>
-      </Button>
-      </Link>
-      <CardContent>
-        <Typography variant="body2" color="black">
-          Description
+  <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 600, maxWidth: 600, maxHeight:200 }}>
+    <CardContent>
+        <Typography padding="1%" mt={2} variant="h5" color="black">
+          I need a metal bracket for my racecar
         </Typography>
         <Typography variant="body2" color="black">
-          Country
-          </Typography>
+        With the metal bracket tailored to fit my car's specific requirements, I can confidently embrace the road ahead, knowing my vehicle is equipped for enhanced performance and functionality.
+        </Typography>
       </CardContent>
     </Card> 
-   {/* })} */}
-    </Grid>
+    {/* })} */}
+    </Link>
+  </Grid>
   );
 }
 
