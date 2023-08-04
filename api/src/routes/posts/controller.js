@@ -1,6 +1,6 @@
 require("dotenv").config()
 
-const { findAllPosts, createNewPost } = require("./service")
+const { findAllPosts, addNewPost, findAllRequests, findAllServices, findRequestById, findServiceById } = require("./service")
 
 exports.showAllPosts = async (req, res) => {
   try {
@@ -12,6 +12,26 @@ exports.showAllPosts = async (req, res) => {
     return res.status(500).json()
   }
 }
+
+exports.showRequestById = async (req, res) => {
+  try {
+    const getRequestsData = await findRequestById(req.params.id);
+    return res.json(getRequestsData);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json();
+  }
+};
+
+exports.showServiceById = async (req, res) => {
+  try {
+    const getServiceData = await findServiceById(req.params.id);
+    return res.json(getServiceData);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json();
+  }
+};
 
 exports.createNewPost = async (req, res) => {
   try {
@@ -25,4 +45,22 @@ exports.createNewPost = async (req, res) => {
   }
 }
 
+exports.showAllRequests = async (req, res) => {
+  try {
+    const getRequests = await findAllRequests(req.params);
+    return res.json(getRequests);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json();
+  }
+};
 
+exports.showAllServices = async (req, res) => {
+  try {
+    const getServices = await findAllServices(req.params);
+    return res.json(getServices);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json();
+  }
+};

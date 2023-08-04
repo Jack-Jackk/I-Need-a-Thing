@@ -13,4 +13,24 @@ exports.findAllPosts = async () => {
     return createdPost
   }
 
+  exports.findAllRequests = async () => {
+    const requests = await knex('posts').select("*").where("posts.type", request)
+    return requests
+  }
+
+  exports.findAllServices = async () => {
+    const services = await knex('posts').select("*").where("posts.type", service)
+    return services
+  }
+
+  exports.findServiceById = async (id) => {
+    const results = await knex("posts").select("*").where('posts.id', id)
+    return results;
+  };
+
+  exports.findRequestById = async (id) => {
+    const results = await knex("posts").select("*").where('posts.id', id)
+    return results;
+  };
+
   

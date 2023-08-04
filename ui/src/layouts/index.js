@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Sidebar from './Sidebar';
 import Rightbar from './Rightbar';
 
+
 const Layout = (props) => {
 	
 	return (
@@ -15,8 +16,7 @@ const Layout = (props) => {
 			<Outlet />
 			<Rightbar/>
 			</Stack>
-			<Footer />
-			
+			<Footer />	
 		</Box>
 	);
 };

@@ -31,6 +31,8 @@ function CreateRequest() {
     description: "",
     isDesignRequired: "",
     designUrl: "",
+    fabType: "",
+    material: "",
     quantity: "",
     country: "",
     type: "request"

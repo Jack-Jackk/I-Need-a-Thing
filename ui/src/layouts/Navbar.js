@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import { useState } from "react";
-import { isUserLoggedIn } from "../utility/utils";
 import { Link } from "react-router-dom";
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
@@ -88,7 +87,6 @@ const Navbar = (props) => {
           </Typography>
 
 		  {/* if user is logged in display side drawer with account options */}
-		   {isUserLoggedIn() ? ( 
           <IconButton
             color= "inherit"
             aria-label="open drawer"
@@ -96,9 +94,6 @@ const Navbar = (props) => {
             onClick={handleDrawerOpen}
             sx={{ ...(open && { display: 'none' }) }}
           /> 
-		  ) 
-		  : 
-		  ( 
 			<Link to="/login">
 			<Button
 				sx={{
@@ -111,7 +106,7 @@ const Navbar = (props) => {
 				Login
 			</Button>
 		</Link>
-		  )} 
+		  
 		  <MenuIcon/>
 		  </Toolbar>
       </AppBar>
