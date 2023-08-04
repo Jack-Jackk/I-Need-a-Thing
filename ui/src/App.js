@@ -7,6 +7,9 @@ import Login from './views/Login'
 import Register from './views/Register'
 import CreateRequest from './views/CreateRequest'
 import CreateService from './views/CreateService'
+import RequestsPage from './views/RequestsPage'
+import ServicesPage from './views/ServicesPage'
+import IndividualRequests from './views/IndividualRequests'
 
 function App() {
   return (
@@ -19,7 +22,11 @@ function App() {
             <Route path="/register" element={<Register/>}/>
             <Route path="/posts/new" element={<CreatePost/>}/>
             <Route path="/posts/new/request/" element={<CreateRequest/>}/>
-            <Route path="/posts/new/service" element={<CreateService/>}/>
+            <Route path="/posts/new/service/" element={<CreateService/>}/>
+            <Route path="/posts/requests/" element={<RequestsPage/>}/>
+            <Route path="/posts/services/" element={<ServicesPage/>}/>
+            <Route path="/posts/requests/id/:id" element={<IndividualRequests/>}/>
+            <Route path="/posts/services/id/:id" element={<IndivdualServices/>}/>
           </Route>
         </Routes>
       </ThemeContextProvider>
