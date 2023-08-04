@@ -11,6 +11,7 @@ import RequestsPage from './views/RequestsPage'
 import ServicesPage from './views/ServicesPage'
 import IndividualRequests from './views/IndividualRequests'
 import IndividualServices from './views/IndividualServices'
+import Profile from './views/Profile'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route index element={<Home/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
+            <Route path="/profile/id/" element={<Profile/>}/>
             <Route path="/posts/new" element={<CreatePost/>}/>
             <Route path="/posts/new/request/" element={<CreateRequest/>}/>
             <Route path="/posts/new/service/" element={<CreateService/>}/>

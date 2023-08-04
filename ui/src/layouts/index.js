@@ -1,7 +1,7 @@
 import { Box,  Stack } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
-import Footer from './Footer';
+// import Footer from './Footer';
 import Sidebar from './Sidebar';
 import Rightbar from './Rightbar';
 
@@ -16,7 +16,7 @@ const Layout = (props) => {
 			<Outlet />
 			<Rightbar/>
 			</Stack>
-			<Footer />	
+			{/* <Footer />	 */}
 		</Box>
 	);
 };

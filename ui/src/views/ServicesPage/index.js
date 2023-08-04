@@ -22,7 +22,8 @@ const ServicesPage = (props) => {
 
     
   return (
-    
+    <div>
+      <br></br>
     <Grid>
   <Link to="/posts/services/id/" sx={{ textDecoration:"none" }}>
      {/* {requests.map((request) => (   */}
@@ -39,6 +40,7 @@ const ServicesPage = (props) => {
     {/* })} */}
     </Link>
   </Grid>
+  </div>
   );
 }
 export default ServicesPage;

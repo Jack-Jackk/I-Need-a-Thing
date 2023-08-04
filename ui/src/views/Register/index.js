@@ -17,7 +17,9 @@ import { register } from "../../utility/api";
 import { setToken } from "../../utility/utils";
 
 function Register() {
-  const [userData, setUserdata] = useState();
+  const [userData, setUserdata] = useState({
+    role: "",
+  });
 
   const navigate = useNavigate()
 

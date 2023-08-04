@@ -10,6 +10,7 @@ import { Divider, Grid } from '@mui/material';
 import CommentIcon from '@mui/icons-material/Comment';
 import { getRequestById } from '../../utility/api';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -46,7 +47,12 @@ const IndividualRequests = (props) => {
     
     <Grid>
     <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 950, maxWidth: 950, maxHeight:950 }}>
-      <CardContent>
+      <CardContent >
+        <Link to="/profile/id" textDecoration="none">
+      <Typography m={2} mt={2}variant="h6" color="black">
+           @JackJackk
+          </Typography>
+          </Link>
       <Typography padding="1%" mt={2} variant="h4" color="black">
           I need a metal bracket for my racecar
         </Typography>

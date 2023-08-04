@@ -1,38 +1,16 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Link } from 'react-router-dom';
-import { Button, Divider, Grid } from '@mui/material';
-import CommentIcon from '@mui/icons-material/Comment';
+import { Grid } from '@mui/material';
 import { getAllPosts } from '../../utility/api';
 import { useState, useEffect } from 'react';
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
 
 
 const Home = (props) => {
   const [posts, setPosts] = useState();
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   useEffect(() => {
     const getPostsData = async () => {
@@ -43,66 +21,44 @@ const Home = (props) => {
     getPostsData();
   }, [posts]);
 
-if (!posts) {
-  return <div>Loading...</div>
-}
+
 
   return (
-    
-    <Grid>
-      {posts.map((post) => (
-    <Card sx={{ maxWidth: 600 }}>
-      <Link to='/posts/:id'>
-        <Button sx={{ color:"black", textDecoration: "none"}}>
-      <CardHeader
-        title={post.title}
-        subheader={post.createdAt}
-      />
-      </Button>
-      </Link>
-     
+    <div>
+    <br></br>
+    <Grid >
+    <Link to="/posts/requests/id/" sx={{ textDecoration:"none" }}>
+       {/* {requests.map((request) => (   */}
+    <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 600, maxWidth: 600, maxHeight:200 }}>
       <CardContent>
-        
-        <Typography variant="body2" color="text.secondary">
-          {post.description}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {post.isDesignRequired}
+          <Typography padding="1%" mt={2} variant="h5" color="black">
+            I need a metal bracket for my racecar
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-          {post.designUrl}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {post.quantity}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {post.country}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-       {/* button to expand post and show comments */}
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <CommentIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>@RandomUserGuy: The comments will go here!</Typography>
-          <Divider/>
+          <Typography variant="body2" color="black">
+          With the metal bracket tailored to fit my car's specific requirements, I can confidently embrace the road ahead, knowing my vehicle is equipped for enhanced performance and functionality.
+          </Typography>
         </CardContent>
-      </Collapse>
-    </Card> 
-      ))}
-    </Grid>
-  );
+      </Card> 
+      {/* })} */}
+      </Link>
+<br></br>
+     <Link to="/posts/services/id/" sx={{ textDecoration:"none" }}>
+        {/* {requests.map((request) => (   */}
+     <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 600, maxWidth: 600, maxHeight:200 }}>
+       <CardContent>
+           <Typography padding="1%" mt={2} variant="h5" color="black">
+           I create wooden trinkets
+           </Typography>
+           <Typography variant="body2" color="black">
+           As a skilled craftsman using CNC technology, I meticulously carve exquisite wooden trinkets with precision and artistry. The CNC machine allows me to create intricate designs and shapes, ensuring each piece is a unique work of art. From personalized keychains to ornate figurines, my CNC-crafted wooden trinkets captivate the imagination and add a touch of nature's beauty to everyday life.
+           </Typography>
+         </CardContent>
+       </Card> 
+       {/* })} */}
+       </Link>
+     </Grid>
+     </div>
+    );
 }
 
 export default Home;

@@ -22,7 +22,8 @@ const RequestsPage = (props) => {
 
 
   return (
-    
+    <div>
+      <br></br>
     <Grid>
   <Link to="/posts/requests/id/" sx={{ textDecoration:"none" }}>
      {/* {requests.map((request) => (   */}
@@ -39,6 +40,8 @@ const RequestsPage = (props) => {
     {/* })} */}
     </Link>
   </Grid>
+  <br></br>
+  </div>
   );
 }
 
