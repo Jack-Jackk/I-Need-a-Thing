@@ -1,8 +1,6 @@
 require("dotenv").config()
 
-const {
-  findAllPosts, createNewPost
-} = require("./service")
+const { findAllPosts, createNewPost } = require("./service")
 
 exports.showAllPosts = async (req, res) => {
   try {
