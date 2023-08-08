@@ -10,8 +10,8 @@ import AddIcon from '@mui/icons-material/Add';
 import { Link } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import FeedIcon from '@mui/icons-material/Feed';
-import ForumIcon from '@mui/icons-material/Forum';
-import CommentIcon from '@mui/icons-material/Comment';
+// import ForumIcon from '@mui/icons-material/Forum';
+// import CommentIcon from '@mui/icons-material/Comment';
 
 // sidebar with link buttons
 
@@ -68,7 +68,7 @@ const Sidebar = () => {
 			  </ListItem>
 			  </Link>
 
-			  <Link to='/users/posts/me' style={{ color: 'white',textDecoration: 'none' }}>
+			  {/* <Link to='/users/posts/me' style={{ color: 'white',textDecoration: 'none' }}>
 			  <ListItem disablePadding>
 				<ListItemButton>
 					<ListItemIcon>
@@ -88,7 +88,7 @@ const Sidebar = () => {
 				  <ListItemText primary="My Comments" />
 				</ListItemButton>
 			  </ListItem>
-			  </Link>
+			  </Link> */}
 
 			</List>
 		</Box>

@@ -26,10 +26,10 @@ function App() {
             <Route path="/posts/new" element={<CreatePost/>}/>
             <Route path="/posts/new/request/" element={<CreateRequest/>}/>
             <Route path="/posts/new/service/" element={<CreateService/>}/>
-            <Route path="/posts/requests/" element={<RequestsPage/>}/>
-            <Route path="/posts/services/" element={<ServicesPage/>}/>
-            <Route path="/posts/requests/id/" element={<IndividualRequests/>}/>
-            <Route path="/posts/services/id/" element={<IndividualServices/>}/>
+            <Route path="/posts/request/" element={<RequestsPage/>}/>
+            <Route path="/posts/service/" element={<ServicesPage/>}/>
+            <Route path="/posts/:id" element={<IndividualRequests/>}/>
+            <Route path="/posts/:id" element={<IndividualServices/>}/>
           </Route>
         </Routes>
       </ThemeContextProvider>

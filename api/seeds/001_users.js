@@ -9,5 +9,5 @@ exports.seed = async function(knex) {
   await knex('users').del()
   await knex('users').insert(regularUser);
   await knex('users').insert(creators);
-  await knex.raw(`ALTER SEQUENCE users_id_seq RESTART WITH 41`)
+  await knex.raw(`ALTER SEQUENCE users_id_seq RESTART WITH 50`)
 };

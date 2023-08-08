@@ -2,7 +2,7 @@ import { getToken } from "./utils";
 
 
 //The base url of the API, can be changed in the .env file
-const baseUrl = process.env.REACT_APP_API_URL || "http://localhost:3000";
+const baseUrl = process.env.REACT_APP_API_URL || "http://localhost:9000";
 
 export const getAllUsers = async (data) => {
 	const response = await fetch(`${baseUrl}/users/`, {
@@ -145,12 +145,12 @@ export const postRequest = async (data) => {
 
 //function to post new service data to the new service url
 
-export const postService = async (data) => {
+export const postService = async (postData) => {
 
 	const response = await fetch(`${baseUrl}/posts/new/service/`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify(data),
+		body: JSON.stringify(postData),
 	})
 
 	const responseData = await response.json()
@@ -189,36 +189,22 @@ export const getMe = async() => {
   return responseData
 }
 
-export const getServiceById = async (id) => {
-	
+export const getById = async (id) => {
 	const response = await fetch(`${baseUrl}/posts/id/${id}`, {
-	  method: "GET",
-	  headers: new Headers({
-		Authorization: `Bearer `, //Token is required for protected Routes
-	  }),
-	});
-	const responseData = await response.json();
-	if (!response.ok) {
-	  throw new Error(
-		`Status Code: ${response?.status} - ${responseData?.message}`
-	  );
-	}
-	return responseData;
-  };
+		method: 'GET',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify(),
+	})
 
-  export const getRequestById = async (id) => {
-	
-	const response = await fetch(`${baseUrl}/posts/id/${id}`, {
-	  method: "GET",
-	  headers: new Headers({
-		Authorization: `Bearer `, //Token is required for protected Routes
-	  }),
-	});
-	const responseData = await response.json();
+	const responseData = await response.json()
+
 	if (!response.ok) {
-	  throw new Error(
-		`Status Code: ${response?.status} - ${responseData?.message}`
-	  );
+		throw new Error(
+			`Status Code: ${response?.status} - ${responseData?.message}`
+		)
 	}
-	return responseData;
-  };
+
+	return responseData
+	
+}
+ 

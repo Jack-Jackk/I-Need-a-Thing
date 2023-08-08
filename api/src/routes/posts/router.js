@@ -1,8 +1,8 @@
 const { Router } = require('express')
-const { showAllPosts, createNewPost, showAllRequests, showAllServices, showServiceById, showRequestById} = require('./controller')
+const { showAllPosts, createNewPost, showAllRequests, showAllServices, showPostsById} = require('./controller')
 
 //import middleware
-
+const { authenticate } = require('../../middleware/auth')
 // create a new Router instance
 const router = new Router()
 
@@ -10,9 +10,10 @@ const router = new Router()
 router.get('/', showAllPosts)
 router.get('/requests', showAllRequests)
 router.get('/services', showAllServices)
-router.get('/services/id/:id', showServiceById)
-router.get('/requests/id/:id', showRequestById)
-router.post('/new/request', createNewPost)
+router.get('/id/:id', showPostsById)
+router.get('/requests', showAllRequests)
+router.get('/services', showAllServices)
+router.post('/new/request', authenticate, createNewPost)
 router.post('/new/service', createNewPost)
 
 // exporting router

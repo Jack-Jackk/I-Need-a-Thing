@@ -8,8 +8,8 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { Divider, Grid } from '@mui/material';
 import CommentIcon from '@mui/icons-material/Comment';
-import { getServiceById } from '../../utility/api';
-import { useState, useEffect } from 'react';
+import { getById } from '../../utility/api';
+import { useState, useEffect, useParams } from 'react';
 import { Link } from 'react-router-dom';
 
 const ExpandMore = styled((props) => {
@@ -26,21 +26,24 @@ const ExpandMore = styled((props) => {
 
 
 const IndividualServices = (props) => {
-  const [services, setServices] = useState();
+  const [posts, setPosts] = useState([]);
   const [expanded, setExpanded] = React.useState(false);
+
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   useEffect(() => {
-    const getIdService = async () => {
-        const serviceData = await getServiceById();
-        console.log('services: ', services)
-      setServices(serviceData);
-    };
-    getIdService();
-  }, [services]);
+    const fetchPostsDetails = async () => {
+      const response = await getById();
+      const data = await response.json();
+      console.log('data', data)
+      setPosts(data);
+    }
+
+    fetchPostsDetails();
+  }, [])
 
 
 
@@ -51,41 +54,41 @@ const IndividualServices = (props) => {
       <CardContent>
       <Link to="/profile/id" textDecoration="none">
       <Typography m={2} mt={2}variant="h6" color="black">
-           @JackJackk
+           {posts.username}
           </Typography>
           </Link>
       <Typography padding="1%" mt={2} variant="h4" color="black">
-          I create wooden trinkets
+      {posts.title}
         </Typography>
         <Typography mt={2} mb={4} variant="h6" color="black">
-        As a skilled craftsman using CNC technology, I meticulously carve exquisite wooden trinkets with precision and artistry. The CNC machine allows me to create intricate designs and shapes, ensuring each piece is a unique work of art. From personalized keychains to ornate figurines, my CNC-crafted wooden trinkets captivate the imagination and add a touch of nature's beauty to everyday life.
+        {posts.description}
         </Typography>
         <Typography m={2}  mt={2}variant="h7" color="black">
-           Can Design? Yes
+        {posts.canDesign}
           </Typography>
         <Typography m={2} mt={2} variant="h7" color="black">
-          Fabrication Type: CNC 
+        {posts.fabType}
         </Typography>
         <Typography m={2} mt={2} variant="h7" color="black">
-          Material: Wood
+        {posts.material}
         </Typography>
         <Typography m={2} mt={2} variant="body1" color="black">
-        Max Height: 48 in
+        {posts.maxHeight}
         </Typography>
         <Typography m={2} mt={2} variant="body1" color="black">
-        Max Width: 48 in
+        {posts.maxWidth}
         </Typography>
         <Typography m={2} mt={2} variant="body1" color="black">
-        Max Depth: 48 in
+        {posts.maxDepth}
         </Typography>
         <Typography m={2} mt={2} variant="body1" color="black">
-        Max Precision: 48 in
+        {posts.maxPrecision}
         </Typography>
         <Typography m={2} variant="body1" color="black">
-          Country: United States
+        {posts.country}
         </Typography>
         <Typography m={2} variant="body2" color="black">
-          posted at: 08/12/23 9:54 PM
+        {posts.createdAt}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

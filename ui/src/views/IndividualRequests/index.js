@@ -8,8 +8,8 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { Divider, Grid } from '@mui/material';
 import CommentIcon from '@mui/icons-material/Comment';
-import { getRequestById } from '../../utility/api';
-import { useState, useEffect } from 'react';
+import { getById } from '../../utility/api';
+import { useState, useEffect, useParams } from 'react';
 import { Link } from 'react-router-dom';
 
 const ExpandMore = styled((props) => {
@@ -25,60 +25,64 @@ const ExpandMore = styled((props) => {
 
 
 const IndividualRequests = (props) => {
-  const [requests, setRequests] = useState();
+  const params = useParams();
+  const [posts, setPosts] = useState([]);
   const [expanded, setExpanded] = React.useState(false);
+
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   useEffect(() => {
-    const getIdRequest = async () => {
-        const requestData = await getRequestById();
-        console.log('request: ', requests)
-      setRequests(requestData);
+    const getPostsData = async () => {
+        const postData = await getById(params.id);
+        console.log('posts: ', posts)
+      setPosts(postData);
     };
-    getIdRequest();
-  }, [requests]);
+    getPostsData();
+  }, []);
+
 
 
 
   return (
     
     <Grid>
+      {posts.map((post) => 
     <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 950, maxWidth: 950, maxHeight:950 }}>
       <CardContent >
         <Link to="/profile/id" textDecoration="none">
       <Typography m={2} mt={2}variant="h6" color="black">
-           @JackJackk
+           {post.username}
           </Typography>
           </Link>
       <Typography padding="1%" mt={2} variant="h4" color="black">
-          I need a metal bracket for my racecar
+          {post.title}
         </Typography>
         <Typography mt={2} mb={2} variant="h6" color="black">
-        With the metal bracket tailored to fit my car's specific requirements, I can confidently embrace the road ahead, knowing my vehicle is equipped for enhanced performance and functionality.
+        {post.description}
         </Typography>
         <Typography m={2}  mt={2}variant="h7" color="black">
-           Is Design Required? No
+           {post.isDesignRequired}
           </Typography>
         <Typography m={2} mt={2} variant="h7" color="black">
-          Fabrication Type: CNC 
+         {post.fabType}
         </Typography>
         <Typography m={2} mt={2} variant="h7" color="black">
-          Material: Aluminum
+         {post.material}
         </Typography>
         <Typography m={2} mt={2} variant="body1" color="black">
-          Design URL: architectural_example-imperial.dwg
+          {post.designUrl}
         </Typography>
         <Typography m={2} variant="body1" color="black">
-          Quantity: 2
+          {post.quantity}
         </Typography>
         <Typography m={2} variant="body1" color="black">
-          Country: United States
+          {post.country}
         </Typography>
         <Typography m={2} variant="body2" color="black">
-          posted at: 08/12/23 9:54 PM
+         {post.createdAt}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -100,6 +104,7 @@ const IndividualRequests = (props) => {
         </CardContent>
       </Collapse>
     </Card> 
+      )}
     </Grid>
   );
 }

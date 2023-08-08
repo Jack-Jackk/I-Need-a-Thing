@@ -30,7 +30,7 @@ function Login() {
     try {
       const response = await login(userData);
       setToken(response.token);
-      navigate("/home");
+      navigate("/");
       window.location.reload();
     } catch (error) {
       console.log(error);

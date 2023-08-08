@@ -9,5 +9,5 @@ exports.seed = async function(knex) {
   await knex('posts').del()
   await knex('posts').insert(services);
   await knex('posts').insert(requests);
-  await knex.raw(`ALTER SEQUENCE posts_id_seq RESTART WITH 41`)
+  await knex.raw(`ALTER SEQUENCE posts_id_seq RESTART WITH 50`)
 };

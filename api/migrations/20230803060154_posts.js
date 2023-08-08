@@ -11,8 +11,8 @@ exports.up = function(knex) {
         table.boolean('canDesign').nullable();
         table.boolean('isDesignRequired').nullable();
         table.text('designUrl').nullable();
-        table.enu('fabType', ["CNC", "3D Print", "Injection Mold", "Other"]).nullable();
-        table.enu('material', ["Metal", "Wood", "Plastic", "Rubber", "Silicone"]).nullable();
+        table.text('fabType').nullable();
+        table.text('material').nullable();
         table.integer("quantity").nullable();
         table.string('country', 75).notNullable();
         table.integer("maxHeight").nullable();

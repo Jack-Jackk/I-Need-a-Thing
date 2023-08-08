@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
 import { useNavigate } from "react-router-dom";
-import { postService } from "../../utility/api";
+import { postService, getMe } from "../../utility/api";
 import { setToken } from "../../utility/utils";
 import MenuItem from '@mui/material/MenuItem';
 
@@ -27,60 +27,8 @@ const options = [
     }
 ]
 
-const fabtype = [
-  {
-    value: "CNC",
-    label: "CNC"
-  },
-  {
-    value: "3D Print",
-    label: "3D Print"
-  },
-  {
-    value: "Injection Mold",
-    label: "Injection Mold"
-  },
-  {
-    value: "Other",
-    label: "Other"
-  }
-]
-
-const material = [
-  {
-    value: "Metal",
-    label: "Metal"
-  },
-  {
-    value: "Plastic",
-    label: "Plastic"
-  },
-  {
-    value: "Wood",
-    label: "Wood"
-  },
-  {
-    value: "Rubber",
-    label: "Rubber"
-  },
-  {
-    value: "Silicone",
-    label: "Silicone"
-  }
-]
-
 function CreateRequest() {
   const [postData, setPostdata] = useState({
-    title: "",
-    description: "",
-    canDesign: "",
-    fabType: "",
-    material: "",
-    country: "",
-    maxHeight: "",
-    maxWidth: "",
-    maxDepth: "",
-    maxPrecision: "",
     type: "service"
   });
 
@@ -154,6 +102,7 @@ function CreateRequest() {
                     fullWidth
                     id="canDesign"
                     select
+                    name="canDesign"
                     label="Can you design?"
                     defaultValue=""
                     onChange={(e) => handleChange(e)}
@@ -169,32 +118,22 @@ function CreateRequest() {
               <TextField
                     fullWidth
                     id="fabType"
-                    select
                     label="Type of Fabrication"
+                    name="fabType"
                     defaultValue=""
                     onChange={(e) => handleChange(e)}
                     >
-                    {fabtype.map((option) => (
-                        <MenuItem key={option.value} value={option.value}>
-                            {option.label}
-                        </MenuItem>
-                        ))}
                 </TextField>
               </Grid>
               <Grid item xs={12}>
               <TextField
                     fullWidth
                     id="material"
-                    select
                     label="Type of Materials"
+                    name="material"
                     defaultValue=""
                     onChange={(e) => handleChange(e)}
                     >
-                    {material.map((option) => (
-                        <MenuItem key={option.value} value={option.value}>
-                            {option.label}
-                        </MenuItem>
-                        ))}
                 </TextField>
               </Grid>
                 <Grid item xs={12}>

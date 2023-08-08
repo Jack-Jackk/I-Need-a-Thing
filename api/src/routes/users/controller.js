@@ -39,7 +39,6 @@ exports.showMe = async (req, res) => {
     if (!req.user) {
       return res.status(401).json({ error: "Invalid token provided" });
     }
-    console.log("auth req.user: ", req.user);
     const user = { ...req.user };
 
     if (!user) {
@@ -83,3 +82,4 @@ exports.login = async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
+

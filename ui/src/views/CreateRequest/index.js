@@ -27,14 +27,6 @@ const options = [
 
 function CreateRequest() {
   const [postData, setPostdata] = useState({
-    title: "",
-    description: "",
-    isDesignRequired: "",
-    designUrl: "",
-    fabType: "",
-    material: "",
-    quantity: "",
-    country: "",
     type: "request"
   });
 
@@ -109,6 +101,7 @@ function CreateRequest() {
                     id="isDesignRequired"
                     select
                     label="Is a design required?"
+                    name="isDesignRequired"
                     defaultValue=""
                     onChange={(e) => handleChange(e)}
                     >

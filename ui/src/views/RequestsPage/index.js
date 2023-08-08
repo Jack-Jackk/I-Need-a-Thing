@@ -2,43 +2,50 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Grid } from '@mui/material';
-import { getAllRequests } from '../../utility/api';
 import { useState, useEffect } from 'react';
 
 
-const RequestsPage = (props) => {
-  const [requests, setRequests] = useState();
-
+const RequestsPage = () => {
+  const [requests, setRequests] = useState()
+  const {id} = useParams()
   useEffect(() => {
-    const getRequestsData = async () => {
-        const requestData = await getAllRequests();
-        console.log('requests: ', requests)
-      setRequests(requestData);
-    };
-    getRequestsData();
-  }, [requests]);
+    const fetchRequests = async () => {
+      const response = await fetch(`http://localhost:9000/posts/requests/`);
+      const data = await response.json();
+      console.log('data', data)
+      setRequests(data);
+    }
 
+    fetchRequests();
+  }, [id])
+
+  
 
   return (
     <div>
       <br></br>
     <Grid>
-  <Link to="/posts/requests/id/" sx={{ textDecoration:"none" }}>
+    {requests.map((request) => 
+  <Link to="/posts/requests/id/:id" sx={{ textDecoration:"none" }}>
      {/* {requests.map((request) => (   */}
   <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 600, maxWidth: 600, maxHeight:200 }}>
     <CardContent>
         <Typography padding="1%" mt={2} variant="h5" color="black">
-          I need a metal bracket for my racecar
+          {request.title}
         </Typography>
         <Typography variant="body2" color="black">
-        With the metal bracket tailored to fit my car's specific requirements, I can confidently embrace the road ahead, knowing my vehicle is equipped for enhanced performance and functionality.
+       {request.description}
+        </Typography>
+        <Typography variant="body2" color="black">
+        @{request.username}
         </Typography>
       </CardContent>
     </Card> 
     {/* })} */}
     </Link>
+    )}
   </Grid>
   <br></br>
   </div>

@@ -9,7 +9,7 @@ const cors = require('cors')
 const { pathLogger } = require('./middleware/logger')
 // initialize express
 const app = express()
-const port = 3000
+const port = 9000
 
 //Application level middleware
 app.use(cors())

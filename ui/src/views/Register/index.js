@@ -18,7 +18,7 @@ import { setToken } from "../../utility/utils";
 
 function Register() {
   const [userData, setUserdata] = useState({
-    role: "",
+    role: ""
   });
 
   const navigate = useNavigate()
@@ -42,6 +42,11 @@ function Register() {
       console.log(error)
     }
   };
+
+//   if (!userData) 
+// return (
+//     <div>Loading...</div>
+// )
 
   return (
   <>
@@ -165,7 +170,7 @@ function Register() {
                       fullWidth
                       id="bio"
                       label="Biography"
-                      name="biography"
+                      name="bio"
                       onChange={(e) => handleChange(e)}
                     />
                   </Grid>
