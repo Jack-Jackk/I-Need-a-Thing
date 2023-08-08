@@ -5,9 +5,24 @@ import { Box, Typography, Card, CardContent } from "@mui/material";
 import { Link } from "react-router-dom";
 
 
+//getUser does not exist yet 
 
-function Profile() {
+const Profile = (props) => {
+    const [data, setData] = useState();
+ 
+    useEffect(() => {
+      const getUserData = async () => {
+          const userData = await getUser();
+          console.log('user: ', user)
+        setData(userData);
+      };
+      getUserData();
+    }, [data]);
 
+    // if (!data) 
+    // return (
+    //     <div>Loading...</div>
+    // )
 
     return (
       <Box xs={6} sm={12} >

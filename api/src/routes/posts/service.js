@@ -4,33 +4,28 @@ const knex = require('../../knex.js')
 exports.findAllPosts = async () => {
     const posts = await knex('posts').select("*")
     console.log('posts: ', posts)
-  
     return posts
   }
 
-  exports.addNewPost = async (newPost) => {
-    const createdPost = await knex('posts').insert(newPost)
+  exports.addNewPost = async (postData) => {
+    const createdPost = await knex('posts').insert(postData)
     return createdPost
   }
 
   exports.findAllRequests = async () => {
-    const requests = await knex('posts').select("*").where("posts.type", request)
+    const requests = await knex('posts').select("*").where("posts.type", "request")
     return requests
   }
 
   exports.findAllServices = async () => {
-    const services = await knex('posts').select("*").where("posts.type", service)
+    const services = await knex('posts').select("*").where("posts.type", "service")
     return services
   }
 
-  exports.findServiceById = async (id) => {
-    const results = await knex("posts").select("*").where('posts.id', id)
-    return results;
+  exports.findById = async (id) => {
+    const postId = await knex("posts").select("*").where('id', id)
+    return postId;
   };
 
-  exports.findRequestById = async (id) => {
-    const results = await knex("posts").select("*").where('posts.id', id)
-    return results;
-  };
 
   
