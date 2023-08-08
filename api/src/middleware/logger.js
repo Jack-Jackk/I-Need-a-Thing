@@ -14,6 +14,5 @@ exports.pathLogger = (req, res, next) => {
 
   const formattedDate = `${date} ${getMonthName(month).substring(0,3)} ${year} ${hours}:${minutes}` // 4 January 2020 0:56
 
-  console.log(`[${formattedDate}]:`, `${req.method} ${req.path}`)
   next()
 }

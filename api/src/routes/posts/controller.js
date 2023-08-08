@@ -1,11 +1,11 @@
 require("dotenv").config()
+const jwt = require('jsonwebtoken')
 
 const { findAllPosts, addNewPost, findAllRequests, findAllServices, findById, findRequestById, findServiceById } = require("./service")
 
 exports.showAllPosts = async (req, res) => {
   try {
     const allPosts = await findAllPosts(req.params)
-    console.log("allPosts: ", allPosts)
     return res.json(allPosts)
   } catch (error) {
     console.log(error)
@@ -15,9 +15,8 @@ exports.showAllPosts = async (req, res) => {
 
 exports.showPostsById = async (req, res) => {
   try {
-    const postId = await findById(req.params)
-    console.log("PostsId: ", postId)
-    return res.json(allPosts)
+    const posts = await findById(req.params.id)
+    return res.json(posts)
   } catch (error) {
     console.log(error)
     return res.status(500).json()
@@ -68,11 +67,13 @@ exports.getServiceById = async (req, res) => {
 
 exports.createNewPost = async (req, res) => {
   try {
+    const id = req.user[0].id
     const postData = req.body;
+    postData["userId"] = id;
+    console.log(postData)
     const post = await addNewPost(postData);
-
     // Create a JWT and send it back to the client
-    const token = jwt.sign({ id: userId }, process.env.SECRET_KEY);
+    const token = jwt.sign({ id: id }, process.env.SECRET_KEY);
     return res.json({ token });
   } catch (error) {
     console.log(error);
@@ -82,7 +83,8 @@ exports.createNewPost = async (req, res) => {
 
 exports.showAllRequests = async (req, res) => {
   try {
-    const getRequests = await findAllRequests(req.params);
+    const getRequests = await findAllRequests();
+    console.log("requests:", getRequests)
     return res.json(getRequests);
   } catch (error) {
     console.log(error);
@@ -92,7 +94,7 @@ exports.showAllRequests = async (req, res) => {
 
 exports.showAllServices = async (req, res) => {
   try {
-    const getServices = await findAllServices(req.params);
+    const getServices = await findAllServices();
     return res.json(getServices);
   } catch (error) {
     console.log(error);

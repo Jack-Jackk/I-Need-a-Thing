@@ -46,7 +46,7 @@ const Sidebar = () => {
 
 		  <Divider />
 
-			<Link to='/posts/requests/' style={{ color: 'white',textDecoration: 'none' }}>
+			<Link to='/posts/requests' style={{ color: 'white',textDecoration: 'none' }}>
 			  <ListItem disablePadding>
 				<ListItemButton>
 					<ListItemIcon>
@@ -57,7 +57,7 @@ const Sidebar = () => {
 			  </ListItem>
 			  </Link>
 
-			  <Link to='/posts/services/' style={{ color: 'white',textDecoration: 'none' }}>
+			  <Link to='/posts/services' style={{ color: 'white',textDecoration: 'none' }}>
 			  <ListItem disablePadding>
 				<ListItemButton >
 					<ListItemIcon>

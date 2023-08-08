@@ -26,8 +26,8 @@ function App() {
             <Route path="/posts/new" element={<CreatePost/>}/>
             <Route path="/posts/new/request/" element={<CreateRequest/>}/>
             <Route path="/posts/new/service/" element={<CreateService/>}/>
-            <Route path="/posts/request/" element={<RequestsPage/>}/>
-            <Route path="/posts/service/" element={<ServicesPage/>}/>
+            <Route path="/posts/:type" element={<RequestsPage/>}/>
+            <Route path="/posts/:type" element={<ServicesPage/>}/>
             <Route path="/posts/:id" element={<IndividualRequests/>}/>
             <Route path="/posts/:id" element={<IndividualServices/>}/>
           </Route>

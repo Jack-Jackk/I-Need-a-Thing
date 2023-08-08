@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 
 //getUser does not exist yet 
-
 const Profile = (props) => {
     const [data, setData] = useState();
  

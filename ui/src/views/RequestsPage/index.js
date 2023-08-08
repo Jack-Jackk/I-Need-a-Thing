@@ -2,34 +2,30 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Grid } from '@mui/material';
 import { useState, useEffect } from 'react';
+import { getByRequest } from '../../utility/api';
+
 
 
 const RequestsPage = () => {
-  const [requests, setRequests] = useState()
-  const {id} = useParams()
+  const [requests, setRequests] = useState([])
   useEffect(() => {
-    const fetchRequests = async () => {
-      const response = await fetch(`http://localhost:9000/posts/requests/`);
-      const data = await response.json();
-      console.log('data', data)
-      setRequests(data);
-    }
-
-    fetchRequests();
-  }, [id])
-
-  
+		const getPostsType = async () => {
+			const postType = await getByRequest("request");
+			console.log("posts: ", requests);
+			setRequests(postType);
+		};
+		getPostsType();
+	}, []);
 
   return (
     <div>
       <br></br>
-    <Grid>
+    <Grid mb={2}>
     {requests.map((request) => 
-  <Link to="/posts/requests/id/:id" sx={{ textDecoration:"none" }}>
-     {/* {requests.map((request) => (   */}
+  <Link to={`/posts/:id`} sx={{ textDecoration:"none" }}>
   <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 600, maxWidth: 600, maxHeight:200 }}>
     <CardContent>
         <Typography padding="1%" mt={2} variant="h5" color="black">
@@ -43,7 +39,6 @@ const RequestsPage = () => {
         </Typography>
       </CardContent>
     </Card> 
-    {/* })} */}
     </Link>
     )}
   </Grid>

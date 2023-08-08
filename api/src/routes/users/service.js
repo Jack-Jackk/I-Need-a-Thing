@@ -34,3 +34,8 @@ exports.findByUsername = async (username) => {
   const user = await knex("users").where("username", username).first("*");
   return user;
 };
+
+exports.findById = async (id) => {
+  const postId = await knex("users").select("*").where('id', id)
+  return postId;
+};
