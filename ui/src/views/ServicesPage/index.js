@@ -37,7 +37,7 @@ const ServicesPage = (props) => {
 			<Grid mb={2}>
 				{posts.map((post) => (
           <Grid mb={2}>
-          {post.type === "service" ? (<></>):(
+          {post.type === "request" ? (<></>):(
             <div>
 						<br></br>
 						<Link to={`/posts/${post.id}`}>

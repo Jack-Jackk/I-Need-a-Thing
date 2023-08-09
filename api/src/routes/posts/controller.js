@@ -68,6 +68,7 @@ exports.getServiceById = async (req, res) => {
 exports.createNewPost = async (req, res) => {
   try {
     const id = req.user[0].id
+    console.log(id)
     const postData = req.body;
     postData["userId"] = id;
     console.log(postData)

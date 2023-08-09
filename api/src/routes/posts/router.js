@@ -14,7 +14,7 @@ router.get('/:id', showPostsById)
 router.get('/requests', showAllPosts)
 router.get('/services', showAllPosts)
 router.post('/new/request', authenticate, createNewPost)
-router.post('/new/service', createNewPost)
+router.post('/new/service', authenticate, createNewPost)
 
 // exporting router
 module.exports = router
