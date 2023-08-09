@@ -12,12 +12,12 @@ exports.findAllPosts = async () => {
   }
 
   exports.findAllRequests = async () => {
-    const requests = await knex('posts').select("*").where("posts.type", "request")
+    const requests = await knex('posts').select("*").where("request")
     return requests
   }
 
   exports.findAllServices = async () => {
-    const services = await knex('posts').select("*").where("posts.type", "service")
+    const services = await knex('posts').select("*").where("service")
     return services
   }
 

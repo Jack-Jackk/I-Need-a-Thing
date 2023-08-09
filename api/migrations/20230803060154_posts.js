@@ -8,8 +8,8 @@ exports.up = function(knex) {
         table.integer('userId').notNullable().references('id').inTable('users').onDelete('CASCADE');
         table.string('title', 80).notNullable();
         table.text('description').notNullable();
-        table.boolean('canDesign').nullable();
-        table.boolean('isDesignRequired').nullable();
+        table.text('canDesign').nullable();
+        table.text('isDesignRequired').nullable();
         table.text('designUrl').nullable();
         table.text('fabType').nullable();
         table.text('material').nullable();

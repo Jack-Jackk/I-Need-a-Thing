@@ -40,44 +40,6 @@ export const getAllPosts = async (data) => {
 	return responseData;
 };
 
-//function to get all requests from the url
-export const getAllRequests = async (data) => {
-	const response = await fetch(`${baseUrl}/posts/requests/`, {
-		method: "GET",
-		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify(data),
-	});
-
-	const responseData = await response.json();
-
-	if (!response.ok) {
-		throw new Error(
-			`Status Code: ${response?.status} - ${responseData?.message}`
-		);
-	}
-
-	return responseData;
-};
-
-//function to get all requests from the url
-export const getAllServices = async (data) => {
-	const response = await fetch(`${baseUrl}/posts/services/`, {
-		method: "GET",
-		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify(data),
-	});
-
-	const responseData = await response.json();
-
-	if (!response.ok) {
-		throw new Error(
-			`Status Code: ${response?.status} - ${responseData?.message}`
-		);
-	}
-
-	return responseData;
-};
-
 //function to post new user data to the register url
 export const register = async (data) => {
 	const response = await fetch(`${baseUrl}/users/register/`, {

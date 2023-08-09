@@ -95,6 +95,7 @@ exports.showAllRequests = async (req, res) => {
 exports.showAllServices = async (req, res) => {
   try {
     const getServices = await findAllServices();
+    console.log("services:", getServices)
     return res.json(getServices);
   } catch (error) {
     console.log(error);

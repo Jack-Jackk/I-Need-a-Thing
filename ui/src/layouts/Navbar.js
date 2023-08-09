@@ -56,7 +56,7 @@ const settingsItemsList = [
 	{
 		text: "Profile",
 		icon: <Person2Icon />,
-		to: "/users/profile/",
+		to: "/profile/id",
 	},
 	{
 		text: "Account Settings",
@@ -110,10 +110,9 @@ const Navbar = (props) => {
 						I Need a Thing
 					</Typography>
 
-					{/* if user is logged in display side drawer with account options */}
+			
 				
-					{!me ? (
-						<>
+				
 							<Link to="/login">
 								<Button
 									sx={{
@@ -126,8 +125,6 @@ const Navbar = (props) => {
 									Login
 								</Button>
 							</Link>
-						</>
-					) : (
 						<>	<IconButton
 						color="inherit"
 						aria-label="open drawer"
@@ -136,9 +133,6 @@ const Navbar = (props) => {
 						sx={{ ...(open && { display: "none" }) }}
 					/>
 					<MenuIcon sx={{bgcolor: 'black'}}/></>
-					)}
-
-					
 				</Toolbar>
 			</AppBar>
 			<Drawer
@@ -157,7 +151,7 @@ const Navbar = (props) => {
 							<ChevronRightIcon />
 						)}
 					</IconButton>
-					<Typography>@username</Typography>
+					<Typography>@JackJackk</Typography>
 				</DrawerHeader>
 				<Divider />
 				<List>

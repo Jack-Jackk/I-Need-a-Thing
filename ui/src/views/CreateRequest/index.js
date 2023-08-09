@@ -16,11 +16,11 @@ import MenuItem from '@mui/material/MenuItem';
 // options for dropdown selects
 const options = [
     {
-        value: "true",
+        value: "Yes",
         label: "Yes"
     },
     {
-        value: "false",
+        value: "No",
         label: "No"
     }
 ]

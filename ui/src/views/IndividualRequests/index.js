@@ -66,12 +66,12 @@ const IndividualRequests = (props) => {
 								to="/profile/id"
 								textDecoration="none">
 								<Typography
-									m={2}
-									mt={2}
-									variant="h6"
-									color="black">
-									{post.username}
-								</Typography>
+								padding="1%"
+								mt={2}
+								variant="h6"
+								color="black">
+								@JackJackk: 
+							</Typography>
 							</Link>
 							<Typography
 								padding="1%"
@@ -87,52 +87,92 @@ const IndividualRequests = (props) => {
 								color="black">
 								{post.description}
 							</Typography>
+							{post.isDesignRequired === null ? (
+							<Typography m={2}  mt={2}variant="h7" color="black">
+							Can Design? {post.canDesign}
+							</Typography>
+							) : (
+								<Typography
+								m={2}
+								mt={2}
+								variant="h7"
+								color="black">
+								Is Design Required? {post.isDesignRequired}
+							</Typography>
+							
+							)}
 							<Typography
 								m={2}
 								mt={2}
 								variant="h7"
 								color="black">
-								{post.isDesignRequired}
+								Fabrication Type: {post.fabType}
 							</Typography>
 							<Typography
 								m={2}
 								mt={2}
 								variant="h7"
 								color="black">
-								{post.fabType}
+								Material: {post.material}
 							</Typography>
-							<Typography
-								m={2}
-								mt={2}
-								variant="h7"
-								color="black">
-								{post.material}
-							</Typography>
+							{post.designUrl === null ? (
+							<></>
+							) : (
 							<Typography
 								m={2}
 								mt={2}
 								variant="body1"
 								color="black">
-								{post.designUrl}
-							</Typography>
+								Design URL: {post.designUrl}
+							</Typography> )}
+							{post.quantity === null ? (
+							<></>
+							) : (
 							<Typography
 								m={2}
 								variant="body1"
 								color="black">
-								{post.quantity}
-							</Typography>
+								Quantity: {post.quantity}
+							</Typography> )}
+
+							{post.maxHeight === null ? (
+							<></>
+							) : (
+								<Typography m={2} mt={2} variant="body1" color="black">
+							Max Height: {post.maxHeight}
+							</Typography> )}
+							{post.maxWidth === null ? (
+							<></>
+							) : (
+							<Typography m={2} mt={2} variant="body1" color="black">
+							Max Width: {post.maxWidth}
+							</Typography> )}
+							{post.maxDepth === null ? (
+								<></>
+								) : (
+							<Typography m={2} mt={2} variant="body1" color="black">
+							Max Depth: {post.maxDepth}
+							</Typography> )}
+							{post.maxPrecision === null ? (
+								<></>
+								) : (
+							<Typography m={2} mt={2} variant="body1" color="black">
+							Max Precision: {post.maxPrecision}
+							</Typography> )}
+					
 							<Typography
 								m={2}
 								variant="body1"
 								color="black">
-								{post.country}
+								Country: {post.country}
 							</Typography>
 							<Typography
 								m={2}
 								variant="body2"
 								color="black">
-								{convertDate(post.createdAt)}
+								Posted: {convertDate(post.createdAt)}
 							</Typography>
+							
 						</CardContent>
 						<CardActions disableSpacing>
 							{/* button to expand post and show comments */}

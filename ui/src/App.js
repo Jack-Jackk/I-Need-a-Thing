@@ -10,7 +10,6 @@ import CreateService from './views/CreateService'
 import RequestsPage from './views/RequestsPage'
 import ServicesPage from './views/ServicesPage'
 import IndividualRequests from './views/IndividualRequests'
-import IndividualServices from './views/IndividualServices'
 import Profile from './views/Profile'
 
 function App() {
@@ -26,10 +25,9 @@ function App() {
             <Route path="/posts/new" element={<CreatePost/>}/>
             <Route path="/posts/new/request/" element={<CreateRequest/>}/>
             <Route path="/posts/new/service/" element={<CreateService/>}/>
-            <Route path="/posts/:type" element={<RequestsPage/>}/>
-            <Route path="/posts/:type" element={<ServicesPage/>}/>
+            <Route path="/posts/requests/" element={<RequestsPage/>}/>
+            <Route path="/posts/services/" element={<ServicesPage/>}/>
             <Route path="/posts/:id" element={<IndividualRequests/>}/>
-            <Route path="/posts/:id" element={<IndividualServices/>}/>
           </Route>
         </Routes>
       </ThemeContextProvider>

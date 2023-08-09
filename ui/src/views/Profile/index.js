@@ -66,7 +66,7 @@ const Profile = (props) => {
     
       <Grid mb={2}>
 				{posts.slice(0,5).map((post) => (
-          {post.userId}
+          
 					<div>
 						<br></br>
 						<Link to={`/posts/${post.id}`}>
