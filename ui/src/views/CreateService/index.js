@@ -8,9 +8,8 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-
 import { useNavigate } from "react-router-dom";
-import { postService, getMe } from "../../utility/api";
+import { postService } from "../../utility/api";
 import { setToken } from "../../utility/utils";
 import MenuItem from '@mui/material/MenuItem';
 
@@ -18,11 +17,11 @@ import MenuItem from '@mui/material/MenuItem';
 // menu options for dropdown selects
 const options = [
     {
-        value: "true",
+        value: "Yes",
         label: "Yes"
     },
     {
-        value: "false",
+        value: "No",
         label: "No"
     }
 ]

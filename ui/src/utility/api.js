@@ -107,11 +107,16 @@ export const postRequest = async (data) => {
 
 //function to post new service data to the new service url
 
-export const postService = async (postData) => {
-	const response = await fetch(`${baseUrl}/posts/new/service/`, {
+export const postService = async (data) => {
+	const token = getToken()
+	const response = await fetch(`${baseUrl}/posts/new/service`, {
 		method: "POST",
-		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify(postData),
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`
+		},
+
+		body: JSON.stringify(data),
 	});
 
 	const responseData = await response.json();
