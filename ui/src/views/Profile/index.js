@@ -3,25 +3,26 @@ import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
 import { Box, Typography, Card, CardContent } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { getAllPosts } from "../../utility/api";
 
 
 //getUser does not exist yet 
 const Profile = (props) => {
-    const [data, setData] = useState();
- 
-    useEffect(() => {
-      const getUserData = async () => {
-          const userData = await getUser();
-          console.log('user: ', user)
-        setData(userData);
-      };
-      getUserData();
-    }, [data]);
+  const [posts, setPosts] = useState([]);
 
-    // if (!data) 
-    // return (
-    //     <div>Loading...</div>
-    // )
+	const convertDate = (date) => {
+		let dateString = new Date(date).toLocaleDateString();
+		return dateString;
+	};
+
+	useEffect(() => {
+		const getPostsData = async () => {
+			const postData = await getAllPosts();
+			setPosts(postData);
+		};
+		getPostsData();
+	}, []);
 
     return (
       <Box xs={6} sm={12} >
@@ -62,42 +63,45 @@ const Profile = (props) => {
                 </Typography>
                 <div>
                     <br></br>
-                <Grid justifyContent="center">
-                    <Link to="/posts/requests/id/" textDecoration="none">
-                        {/* {requests.map((request) => (   */}
-                        <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 600, maxWidth: 600, maxHeight:200 }}>
-                        <CardContent>
-                            <Typography padding="1%" mt={2} variant="h5" color="black">
-                            I need a metal bracket for my racecar
-                            </Typography>
-                            <Typography variant="body2" color="black">
-                            With the metal bracket tailored to fit my car's specific requirements, I can confidently embrace the road ahead, knowing my vehicle is equipped for enhanced performance and functionality.
-                            </Typography>
-                        </CardContent>
-                    </Card> 
-                    {/* })} */}
-                    </Link>
-                </Grid>
-                <br></br>
-                </div>
-                <div>
-      <br></br>
-    <Grid>
-  <Link to="/posts/services/id/" sx={{ textDecoration:"none" }}>
-     {/* {requests.map((request) => (   */}
-  <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 600, maxWidth: 600, maxHeight:200 }}>
-    <CardContent>
-        <Typography padding="1%" mt={2} variant="h5" color="black">
-        I create wooden trinkets
-        </Typography>
-        <Typography variant="body2" color="black">
-        As a skilled craftsman using CNC technology, I meticulously carve exquisite wooden trinkets with precision and artistry. The CNC machine allows me to create intricate designs and shapes, ensuring each piece is a unique work of art. From personalized keychains to ornate figurines, my CNC-crafted wooden trinkets captivate the imagination and add a touch of nature's beauty to everyday life.
-        </Typography>
-      </CardContent>
-    </Card> 
-    {/* })} */}
-    </Link>
-  </Grid>
+    
+      <Grid mb={2}>
+				{posts.slice(0,5).map((post) => (
+          {post.userId}
+					<div>
+						<br></br>
+						<Link to={`/posts/${post.id}`}>
+							<Card
+								style={{ background: "#E3FEE6" }}
+								sx={{
+									borderRadius: "2%",
+									minWidth: 600,
+									maxWidth: 600,
+									maxHeight: 200,
+								}}>
+								<CardContent>
+									<Typography
+										m={1}
+										variant="h5"
+										color="black">
+										{post.title}
+									</Typography>
+									<br></br>
+									<Typography
+										variant="body2"
+										color="black">
+										{post.description}
+									</Typography>
+									<Typography
+										variant="body2"
+										color="black">
+										Posted: {convertDate(post.createdAt)}
+									</Typography>
+								</CardContent>
+							</Card>
+						</Link>
+					</div>
+				))}
+			</Grid>
   </div>
               </Grid>
             </Grid>

@@ -1,48 +1,84 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
-import { Grid } from '@mui/material';
-import { getByService } from '../../utility/api';
-import { useState, useEffect } from 'react';
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
+import { Grid } from "@mui/material";
+import { getAllPosts } from "../../utility/api";
+import { useState, useEffect } from "react";
 
+const ServicesPage = (props) => {
+	const [posts, setPosts] = useState([]);
 
-const ServicesPage = () => {
-  const [services, setServices] = useState()
-  useEffect(() => {
-		const getPostsType = async () => {
-			const postType = await getByService("service");
-			console.log("posts: ", services);
-			setServices(postType);
+	const convertDate = (date) => {
+		let dateString = new Date(date).toLocaleDateString();
+		return dateString;
+	};
+
+	useEffect(() => {
+		const getPostsData = async () => {
+			const postData = await getAllPosts();
+			setPosts(postData);
 		};
-		getPostsType();
+		getPostsData();
 	}, []);
 
-    
-  return (
-    <div>
-      <br></br>
-    <Grid mb={2}>
-    {services.map((service) => 
-  <Link to="/posts/:id" sx={{ textDecoration:"none" }}>
-  <Card style={{ background: '#E3FEE6' }} sx={{ borderRadius: "2%", minWidth: 600, maxWidth: 600, maxHeight:200 }}>
-    <CardContent>
-        <Typography padding="1%" mt={2} variant="h5" color="black">
-        {service.title}
-        </Typography>
-        <Typography variant="body2" color="black">
-        {service.description}
-        </Typography>
-        <Typography variant="body2" color="black">
-        {service.createdAt}
-        </Typography>
-      </CardContent>
-    </Card> 
-    </Link>
-    )}
-  </Grid>
-  </div>
-  );
+	return (
+  
+		<div>
+			<Typography
+				mt={2}
+				variant="h4"
+				color="white">
+				Services
+			</Typography>
+			<br></br>
+
+			<Grid mb={2}>
+				{posts.map((post) => (
+          <Grid mb={2}>
+          {post.type === "service" ? (<></>):(
+            <div>
+						<br></br>
+						<Link to={`/posts/${post.id}`}>
+							<Card
+								style={{ background: "#E3FEE6" }}
+								sx={{
+									borderRadius: "2%",
+									minWidth: 600,
+									maxWidth: 600,
+									maxHeight: 200,
+								}}>
+								<CardContent>
+									<Typography
+										m={1}
+										variant="h5"
+										color="black">
+										{post.title}
+									</Typography>
+									<br></br>
+									<Typography
+										variant="body2"
+										color="black">
+										{post.description}
+									</Typography>
+									<Typography
+										variant="body2"
+										color="black">
+										Posted: {convertDate(post.createdAt)}
+									</Typography>
+								</CardContent>
+							</Card>
+						</Link>
+					</div>
+          )}
+          </Grid>
+				))}
+        
+			</Grid>
+		</div>
+         
+					
+	);
 }
 export default ServicesPage;
