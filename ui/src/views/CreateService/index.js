@@ -188,7 +188,7 @@ function CreateRequest() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Submit Request
+              Submit Service
             </Button>
             </Grid>
             <Grid container justifyContent="center" marginBottom={3}>
